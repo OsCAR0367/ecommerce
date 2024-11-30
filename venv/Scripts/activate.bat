@@ -8,7 +8,11 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
+<<<<<<< HEAD
 set VIRTUAL_ENV=C:\hola\ecommerce\venv
+=======
+set VIRTUAL_ENV=D:\Django-React\ecommerce\venv
+>>>>>>> 1549dbb509432c4c8a27ce7de06ddcee07493133
 
 if not defined PROMPT set PROMPT=$P$G
 
