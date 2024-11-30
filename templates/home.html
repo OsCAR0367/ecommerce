@@ -13,7 +13,31 @@
 </div> <!-- container //  -->
 </section>
 <!-- ========================= SECTION MAIN END// ========================= -->
-
+<div class="coupon-generator text-center my-5">
+	<h2 class="mb-3">Adquiere un <span class="text-success">10% de descuento</span></h2>
+	<button id="generate-coupon" class="btn btn-primary btn-lg mb-3">Generar cupón</button>
+	<input type="text" id="coupon-code" class="form-control w-50 mx-auto text-center" readonly placeholder="Tu código aparecerá aquí">
+  </div>
+  
+  <script>
+	const generateCouponBtn = document.getElementById('generate-coupon');
+	const couponCodeInput = document.getElementById('coupon-code');
+  
+	generateCouponBtn.addEventListener('click', () => {
+	  const couponCode = generateRandomCode(6);
+	  couponCodeInput.value = couponCode;
+	});
+  
+	function generateRandomCode(length) {
+	  let result = '';
+	  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+	  for (let i = 0; i < length; i++) {
+		result += characters.charAt(Math.floor(Math.random() * characters.length));
+	  }
+	  return result;
+	}
+  </script>
+  
 <!-- ========================= SECTION  ========================= -->
 <section class="section-name padding-y-sm">
 <div class="container">
