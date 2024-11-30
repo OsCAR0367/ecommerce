@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">Contáctanos</h2>
+    <form method="POST" action="{% url 'send_message' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea 
+                class="form-control" 
+                id="message" 
+                name="message" 
+                rows="4" 
+                placeholder="Escribe tu mensaje aquí..." 
+                required
+                style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; font-size: 16px; background-color: #f9f9f9; resize: none; height: 100px;">
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+    </form>
+
+    <!-- Ícono de WhatsApp -->
+    <div class="text-center mt-4">
+        <a href="wa.link/71xsxn" target="_blank" class="btn btn-success btn-lg">
+            <i class="fa fa-whatsapp"></i> WhatsApp Ayuda
+        </a>
+    </div>
+</div>
+
+{% endblock %}
